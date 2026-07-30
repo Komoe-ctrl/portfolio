@@ -78,7 +78,7 @@ export default async function Footer() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/komoe-komoe-emile"
+                href="https://www.linkedin.com/in/komoe-komoe-emile-a5559b363"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-xl border border-slate-800 p-3 transition hover:border-blue-500 hover:bg-slate-900"

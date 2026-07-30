@@ -47,7 +47,7 @@
     "statTrainedValue": "50",
     "statTrainedLabel": "Professionals trained",
     "statCertValue": "1",
-    "statCertLabel": "Certification + 1 in progress"
+    "statCertLabel": "Obtained + 1 in progress"
   },
   "About": {
     "badge": "About",
@@ -117,14 +117,14 @@
       {
         "period": "January 2025",
         "title": "IT Training Consultant",
-        "company": "PEJEDEC Project / Freelance",
-        "description": "Designed training materials and led a 3-day digital skills workshop for 50 participants — PEJEDEC 3 Project, funded by the World Bank."
+        "company": "Ebenyx Technologie — PEJEDEC 3 Project, Ferkessédougou",
+        "description": "Trained 50 program beneficiaries in applying digital tools to their trade and raised awareness of information security, as part of a national youth employment program co-funded by the World Bank."
       },
       {
         "period": "2024 — 2025",
         "title": "Fullstack Web Developer",
         "company": "Beryl Informatique",
-        "description": "Built React and Next.js interfaces, developed PHP back-end services, integrated Figma designs, and deployed and maintained WordPress sites."
+        "description": "Built React and Next.js interfaces, developed PHP back-end services, integrated Figma designs, and deployed and maintained WordPress sites. Also delivered office-software training and digital transformation consulting for professional clients."
       }
     ],
     "education": [
@@ -173,7 +173,7 @@
       { "label": "Phone", "value": "+225 07 04 44 48 07" },
       { "label": "Location", "value": "Abidjan, Côte d'Ivoire" },
       { "label": "GitHub", "value": "github.com/Komoe-ctrl", "link": true },
-      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile", "link": true }
+      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile-a5559b363", "link": true }
     ],
     "form": {
       "namePlaceholder": "Your name",

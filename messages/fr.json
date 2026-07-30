@@ -47,7 +47,7 @@
     "statTrainedValue": "50",
     "statTrainedLabel": "Professionnels formés",
     "statCertValue": "1",
-    "statCertLabel": "Certification + 1 en cours"
+    "statCertLabel": "Obtenue + 1 en cours"
   },
   "About": {
     "badge": "À propos",
@@ -117,14 +117,14 @@
       {
         "period": "Janvier 2025",
         "title": "Consultant Formateur IT",
-        "company": "Projet PEJEDEC / Freelance",
-        "description": "Conception des supports et animation d'une session de 3 jours aux compétences numériques auprès de 50 apprenants — Projet PEJEDEC 3, financé par la Banque Mondiale."
+        "company": "Ebenyx Technologie — Projet PEJEDEC 3, Ferkessédougou",
+        "description": "Formation de 50 bénéficiaires du programme sur le numérique appliqué à leur activité et la sensibilisation à la sécurité informatique, dans le cadre d'un programme national d'insertion des jeunes cofinancé par la Banque mondiale."
       },
       {
         "period": "2024 — 2025",
         "title": "Développeur Web Fullstack",
         "company": "Beryl Informatique",
-        "description": "Développement d'interfaces React et Next.js, traitements serveur en PHP, intégration de maquettes Figma, déploiement et maintenance de sites WordPress."
+        "description": "Développement d'interfaces React et Next.js, traitements serveur en PHP, intégration de maquettes Figma, déploiement et maintenance de sites WordPress. Formations bureautique et conseil en digitalisation auprès de clients professionnels."
       }
     ],
     "education": [
@@ -173,7 +173,7 @@
       { "label": "Téléphone", "value": "+225 07 04 44 48 07" },
       { "label": "Localisation", "value": "Abidjan, Côte d'Ivoire" },
       { "label": "GitHub", "value": "github.com/Komoe-ctrl", "link": true },
-      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile", "link": true }
+      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile-a5559b363", "link": true }
     ],
     "form": {
       "namePlaceholder": "Votre nom",
