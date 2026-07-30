@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ton-domaine.com"),
+  metadataBase: new URL(SITE_URL),
 
   title: {
     default: "Komoe Emile | Développeur Fullstack & Cybersécurité",
@@ -56,22 +57,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://ton-domaine.com",
+    url: SITE_URL,
     siteName: "Portfolio Komoe Emile",
 
     title: "Komoe Emile | Développeur Fullstack",
 
     description:
       "Développeur Fullstack spécialisé en Next.js, NestJS, PostgreSQL et cybersécurité.",
-
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Portfolio de Komoe Emile",
-      },
-    ],
   },
 
   twitter: {
@@ -79,13 +71,6 @@ export const metadata: Metadata = {
     title: "Komoe Emile | Développeur Fullstack",
     description:
       "Développeur Fullstack spécialisé en Next.js, NestJS, PostgreSQL et cybersécurité.",
-    images: ["/og-image.png"],
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
 };
 
