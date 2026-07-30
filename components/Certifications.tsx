@@ -86,7 +86,7 @@ export default function Certifications() {
                 {cert.fullName}
               </p>
 
-              <p className="mb-4 text-slate-500">
+              <p className="mb-4 text-slate-400">
                 {cert.organization}
               </p>
 

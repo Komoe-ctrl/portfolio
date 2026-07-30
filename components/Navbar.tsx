@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 
 export default function Navbar() {
@@ -100,7 +101,7 @@ export default function Navbar() {
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-slate-200"
+          className="p-2 md:hidden text-slate-200"
           aria-label="Menu"
         >
           {isOpen ? <IconX size={26} /> : <IconMenu2 size={26} />}
@@ -108,41 +109,49 @@ export default function Navbar() {
       </div>
 
       {/* MOBILE MENU */}
-      {isOpen && (
-        <div className="border-t border-slate-800 bg-slate-950 md:hidden animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="flex flex-col gap-5 p-6">
-            {links.map((link) => {
-              const isActive = active === link.href;
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="border-t border-slate-800 bg-slate-950 md:hidden"
+          >
+            <div className="flex flex-col gap-5 p-6">
+              {links.map((link) => {
+                const isActive = active === link.href;
 
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`
-                    text-sm transition
-                    ${
-                      isActive
-                        ? "text-blue-400"
-                        : "text-slate-300 hover:text-blue-400"
-                    }
-                  `}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`
+                      text-sm transition
+                      ${
+                        isActive
+                          ? "text-blue-400"
+                          : "text-slate-300 hover:text-blue-400"
+                      }
+                    `}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
 
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-xl bg-blue-600 px-4 py-2 text-center text-sm font-medium"
-            >
-              Me contacter
-            </a>
-          </div>
-        </div>
-      )}
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 rounded-xl bg-blue-600 px-4 py-2 text-center text-sm font-medium"
+              >
+                Me contacter
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

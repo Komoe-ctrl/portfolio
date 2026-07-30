@@ -103,7 +103,7 @@ export default function Experience() {
                       {item.title}
                     </h4>
 
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-slate-400">
                       {item.company}
                     </p>
 
@@ -158,7 +158,7 @@ export default function Experience() {
                       {item.title}
                     </h4>
 
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-slate-400">
                       {item.school}
                     </p>
 

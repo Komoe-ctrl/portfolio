@@ -166,17 +166,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <button
-                    className="
-                      text-sm text-blue-400
-                      transition
-                      hover:text-blue-300
-                    "
-                  >
-                    Voir détails →
-                  </button>
-
+                <div className="flex items-center justify-end">
                   <div className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />
                 </div>
               </div>

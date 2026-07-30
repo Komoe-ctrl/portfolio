@@ -114,7 +114,7 @@ export default function Footer() {
 
         <div className="my-10 border-t border-slate-800" />
 
-        <div className="flex flex-col items-center justify-between gap-3 text-sm text-slate-500 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 text-sm text-slate-400 md:flex-row">
           <p>
             © {new Date().getFullYear()} Komoe Komoe Emile. Tous droits réservés.
           </p>

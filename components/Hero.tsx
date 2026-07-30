@@ -64,21 +64,21 @@ export default function Hero() {
         <div className="mt-10 flex gap-10 border-t border-slate-800 pt-8">
           <div>
             <div className="text-3xl font-bold text-blue-400">2+</div>
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-slate-400">
               Ans d&apos;expérience
             </div>
           </div>
 
           <div>
             <div className="text-3xl font-bold text-blue-400">10+</div>
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-slate-400">
               Technologies
             </div>
           </div>
 
           <div>
             <div className="text-3xl font-bold text-blue-400">2</div>
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-slate-400">
               Certifications
             </div>
           </div>

@@ -108,7 +108,7 @@ export default function Contact() {
                 hover:shadow-[0_0_25px_rgba(59,130,246,0.12)]
               "
             >
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-slate-400">
                 {item.label}
               </p>
 
