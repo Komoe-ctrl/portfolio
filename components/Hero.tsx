@@ -50,9 +50,11 @@ export default function Hero() {
           </a>
 
           <a
-            href="/cv/CV_Komoe_Optimise.pdf"
+            href="/cv/CV-Komoe-Komoe-Emile-2026.pdf"
+            download
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Télécharger le CV de Komoe Emile au format PDF"
             className="rounded-xl border border-slate-700 px-6 py-3 font-medium transition-all duration-300 hover:border-blue-400 hover:text-blue-400"
           >
             Télécharger CV
