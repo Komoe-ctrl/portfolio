@@ -2,8 +2,18 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+
+interface ContactInfo {
+  label: string;
+  value: string;
+  link?: boolean;
+}
 
 export default function Contact() {
+  const t = useTranslations("Contact");
+  const infos = t.raw("infos") as ContactInfo[];
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -55,40 +65,19 @@ export default function Contact() {
     setLoading(false);
   };
 
-  const infos = [
-    {
-      label: "Email",
-      value: "komoelogique@gmail.com",
-    },
-    {
-      label: "Téléphone",
-      value: "+225 07 04 44 48 07",
-    },
-    {
-      label: "Localisation",
-      value: "Abidjan, Côte d'Ivoire",
-    },
-    {
-      label: "GitHub",
-      value: "github.com/Komoe-ctrl",
-      link: true,
-    },
-  ];
-
   return (
     <section id="contact" className="mx-auto max-w-7xl px-6 py-24">
       <div className="mb-12">
         <span className="inline-flex rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
-          Contact
+          {t("badge")}
         </span>
 
         <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-          Travaillons ensemble
+          {t("title")}
         </h2>
 
         <p className="mt-4 max-w-2xl text-slate-400">
-          Disponible pour des missions freelance, un poste en entreprise ou une
-          collaboration sur des projets web modernes.
+          {t("intro")}
         </p>
       </div>
 
@@ -149,7 +138,7 @@ export default function Contact() {
             name="name"
             type="text"
             required
-            placeholder="Votre nom"
+            placeholder={t("form.namePlaceholder")}
             value={form.name}
             onChange={handleChange}
             className="
@@ -169,7 +158,7 @@ export default function Contact() {
             name="email"
             type="email"
             required
-            placeholder="Votre email"
+            placeholder={t("form.emailPlaceholder")}
             value={form.email}
             onChange={handleChange}
             className="
@@ -189,7 +178,7 @@ export default function Contact() {
             name="message"
             rows={6}
             required
-            placeholder="Votre message"
+            placeholder={t("form.messagePlaceholder")}
             value={form.message}
             onChange={handleChange}
             className="
@@ -223,12 +212,12 @@ export default function Contact() {
               disabled:opacity-70
             "
           >
-            {loading ? "Envoi..." : "Envoyer le message"}
+            {loading ? t("form.submitting") : t("form.submit")}
           </motion.button>
 
           {success && (
             <p className="text-sm text-green-400">
-              Message envoyé avec succès.
+              {t("form.success")}
             </p>
           )}
         </form>

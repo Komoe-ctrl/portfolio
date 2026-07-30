@@ -1,0 +1,201 @@
+{
+  "Metadata": {
+    "title": "Komoe Emile | Développeur Fullstack & Cybersécurité",
+    "description": "Portfolio de Komoe Emile, développeur Fullstack spécialisé en Next.js, TypeScript, NestJS, PostgreSQL et cybersécurité basé à Abidjan, Côte d'Ivoire.",
+    "applicationName": "Portfolio Komoe Emile",
+    "siteName": "Portfolio Komoe Emile",
+    "ogTitle": "Komoe Emile | Développeur Fullstack",
+    "ogDescription": "Développeur Fullstack spécialisé en Next.js, NestJS, PostgreSQL et cybersécurité.",
+    "keywords": [
+      "Komoe Emile",
+      "Développeur Fullstack",
+      "Next.js",
+      "TypeScript",
+      "NestJS",
+      "PostgreSQL",
+      "Cybersécurité",
+      "Portfolio",
+      "Développeur Abidjan",
+      "Développeur Côte d'Ivoire"
+    ]
+  },
+  "Navbar": {
+    "brandName": "Komoe",
+    "brandSuffix": "dev",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "contact": "Contact",
+    "cta": "Me contacter",
+    "menuAria": "Menu",
+    "languageSwitcherAria": "Changer de langue"
+  },
+  "Hero": {
+    "badge": "Disponible pour missions & emploi",
+    "role": "Fullstack Developer • Cybersecurity",
+    "firstName": "Komoe Komoe",
+    "lastName": "Emile",
+    "intro": "Je développe des applications web modernes, sécurisées et évolutives avec Next.js, TypeScript, NestJS et PostgreSQL.",
+    "currentProject": "Actuellement : FiscalCI — Plateforme SaaS de gestion TVA",
+    "ctaProjects": "Voir mes projets",
+    "ctaCv": "Télécharger CV",
+    "ctaCvAria": "Télécharger le CV de Komoe Emile au format PDF",
+    "photoAlt": "Komoe Emile",
+    "statExperienceValue": "2+",
+    "statExperienceLabel": "Ans d'expérience",
+    "statTrainedValue": "50",
+    "statTrainedLabel": "Professionnels formés",
+    "statCertValue": "1",
+    "statCertLabel": "Certification + 1 en cours"
+  },
+  "About": {
+    "badge": "À propos",
+    "title": "À propos de moi",
+    "paragraph": "Passionné par la cybersécurité, j'accorde une attention particulière à la performance, à l'expérience utilisateur et à la qualité du code."
+  },
+  "Skills": {
+    "badge": "Expertise",
+    "title": "Compétences techniques",
+    "intro": "Stack moderne frontend, backend et cybersécurité pour créer des applications performantes et sécurisées.",
+    "categories": [
+      {
+        "title": "Frontend",
+        "skills": ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Angular", "Tailwind CSS", "Framer Motion"]
+      },
+      {
+        "title": "Backend",
+        "skills": ["PHP", "Node.js", "NestJS", "REST API", "JWT", "Resend"]
+      },
+      {
+        "title": "Base de données",
+        "skills": ["SQL", "PostgreSQL", "MySQL", "Prisma ORM"]
+      },
+      {
+        "title": "Cybersécurité",
+        "skills": ["CSCU", "CND (en cours)", "Sécurité Réseau", "Analyse des risques"]
+      },
+      {
+        "title": "Outils",
+        "skills": ["Git", "GitHub", "VS Code", "Figma", "WordPress", "Postman"]
+      },
+      {
+        "title": "Langues",
+        "skills": ["Français", "Anglais"]
+      }
+    ]
+  },
+  "Projects": {
+    "badge": "Réalisations",
+    "title": "Mes projets",
+    "intro": "Une sélection de projets fullstack modernes, conçus avec des architectures évolutives, performantes et sécurisées.",
+    "items": [
+      {
+        "title": "AKYNOVA GROUP",
+        "description": "Plateforme fullstack complète pour un groupe de services ivoirien à cinq départements — espace client, panel d'administration, blog, authentification par rôles.",
+        "technologies": ["Next.js 16", "TypeScript", "PostgreSQL", "Prisma", "NextAuth v5", "Tailwind CSS", "Framer Motion"],
+        "status": "Terminé — démo sur demande",
+        "badgeLabel": "Projet principal",
+        "imageAlt": "Page d'accueil de la plateforme AKYNOVA GROUP, groupe de services ivoirien à cinq départements"
+      },
+      {
+        "title": "FiscalCI",
+        "description": "Plateforme SaaS de gestion de la TVA et de conformité fiscale destinée aux entreprises ivoiriennes.",
+        "technologies": ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+        "status": "En développement",
+        "badgeLabel": "Étude de faisabilité"
+      }
+    ]
+  },
+  "Experience": {
+    "badge": "Parcours",
+    "title": "Expérience & Formation",
+    "intro": "Mon parcours professionnel et académique dans le développement logiciel et la cybersécurité.",
+    "workTitle": "Expérience professionnelle",
+    "educationTitle": "Formation",
+    "jobs": [
+      {
+        "period": "Janvier 2025",
+        "title": "Consultant Formateur IT",
+        "company": "Projet PEJEDEC / Freelance",
+        "description": "Conception des supports et animation d'une session de 3 jours aux compétences numériques auprès de 50 apprenants — Projet PEJEDEC 3, financé par la Banque Mondiale."
+      },
+      {
+        "period": "2024 — 2025",
+        "title": "Développeur Web Fullstack",
+        "company": "Beryl Informatique",
+        "description": "Développement d'interfaces React et Next.js, traitements serveur en PHP, intégration de maquettes Figma, déploiement et maintenance de sites WordPress."
+      }
+    ],
+    "education": [
+      {
+        "period": "2023 — 2024",
+        "title": "BTS IDA",
+        "school": "ITES II Plateaux",
+        "description": "Informatique de Développement et d'Application."
+      },
+      {
+        "period": "2022",
+        "title": "Baccalauréat Série D",
+        "school": "Groupe Scolaire Amicha Paul",
+        "description": "Sciences."
+      }
+    ]
+  },
+  "Certifications": {
+    "badge": "Certifications",
+    "title": "Certifications EC-Council",
+    "intro": "Certifications internationales en cybersécurité attestant de compétences en sécurité informatique, protection des systèmes et défense des réseaux.",
+    "yearLabel": "Année : {year}",
+    "items": [
+      {
+        "name": "CSCU",
+        "fullName": "Certified Secure Computer User",
+        "organization": "EC-Council",
+        "status": "Obtenu",
+        "year": "2025"
+      },
+      {
+        "name": "CND",
+        "fullName": "Certified Network Defender",
+        "organization": "EC-Council",
+        "status": "En cours",
+        "year": "2025"
+      }
+    ]
+  },
+  "Contact": {
+    "badge": "Contact",
+    "title": "Travaillons ensemble",
+    "intro": "Disponible pour des missions freelance, un poste en entreprise ou une collaboration sur des projets web modernes.",
+    "infos": [
+      { "label": "Email", "value": "komoelogique@gmail.com" },
+      { "label": "Téléphone", "value": "+225 07 04 44 48 07" },
+      { "label": "Localisation", "value": "Abidjan, Côte d'Ivoire" },
+      { "label": "GitHub", "value": "github.com/Komoe-ctrl", "link": true },
+      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile", "link": true }
+    ],
+    "form": {
+      "namePlaceholder": "Votre nom",
+      "emailPlaceholder": "Votre email",
+      "messagePlaceholder": "Votre message",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi...",
+      "success": "Message envoyé avec succès."
+    }
+  },
+  "Footer": {
+    "description": "Développeur Web Fullstack spécialisé en Next.js, TypeScript, NestJS et Cybersécurité. J'aide les entreprises à créer des applications modernes, rapides et sécurisées.",
+    "navigationTitle": "Navigation",
+    "contactTitle": "Me contacter",
+    "backToTop": "Retour en haut",
+    "copyright": "© {year} Komoe Komoe Emile. Tous droits réservés.",
+    "builtWith": "Conçu avec Next.js, TypeScript, Tailwind CSS & Framer Motion."
+  },
+  "NotFound": {
+    "eyebrow": "Erreur 404",
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  }
+}

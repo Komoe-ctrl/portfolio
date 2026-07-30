@@ -4,8 +4,20 @@ import {
   IconMail,
   IconArrowUp,
 } from "@tabler/icons-react";
+import { getTranslations } from "next-intl/server";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("Footer");
+  const tNav = await getTranslations("Navbar");
+
+  const navLinks = [
+    { href: "#about", label: tNav("about") },
+    { href: "#skills", label: tNav("skills") },
+    { href: "#projects", label: tNav("projects") },
+    { href: "#experience", label: tNav("experience") },
+    { href: "#contact", label: tNav("contact") },
+  ];
+
   return (
     <footer className="border-t border-slate-800 bg-slate-950">
       <div className="mx-auto max-w-7xl px-6 py-14">
@@ -13,67 +25,39 @@ export default function Footer() {
           {/* Présentation */}
           <div>
             <h3 className="text-2xl font-bold tracking-tight">
-              Komoe
+              {tNav("brandName")}
               <span className="text-blue-400">.</span>
-              dev
+              {tNav("brandSuffix")}
             </h3>
 
             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">
-              Développeur Web Fullstack spécialisé en Next.js,
-              TypeScript, NestJS et Cybersécurité.
-              J&apos;aide les entreprises à créer des applications
-              modernes, rapides et sécurisées.
+              {t("description")}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
             <h4 className="mb-5 font-semibold text-white">
-              Navigation
+              {t("navigationTitle")}
             </h4>
 
             <nav className="flex flex-col gap-3 text-sm text-slate-400">
-              <a
-                href="#about"
-                className="transition hover:text-blue-400"
-              >
-                À propos
-              </a>
-
-              <a
-                href="#skills"
-                className="transition hover:text-blue-400"
-              >
-                Compétences
-              </a>
-
-              <a
-                href="#projects"
-                className="transition hover:text-blue-400"
-              >
-                Projets
-              </a>
-
-              <a
-                href="#experience"
-                className="transition hover:text-blue-400"
-              >
-                Expérience
-              </a>
-
-              <a
-                href="#contact"
-                className="transition hover:text-blue-400"
-              >
-                Contact
-              </a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="transition hover:text-blue-400"
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
           </div>
 
           {/* Réseaux */}
           <div>
             <h4 className="mb-5 font-semibold text-white">
-              Me contacter
+              {t("contactTitle")}
             </h4>
 
             <div className="flex gap-4">
@@ -93,9 +77,10 @@ export default function Footer() {
                 <IconMail size={20} />
               </a>
 
-              {/* Remplace le lien lorsque ton LinkedIn sera prêt */}
               <a
-                href="#"
+                href="https://www.linkedin.com/in/komoe-komoe-emile"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-xl border border-slate-800 p-3 transition hover:border-blue-500 hover:bg-slate-900"
               >
                 <IconBrandLinkedin size={20} />
@@ -103,11 +88,11 @@ export default function Footer() {
             </div>
 
             <a
-              href="#about"
+              href="#hero"
               className="mt-8 inline-flex items-center gap-2 text-sm text-blue-400 transition hover:text-blue-300"
             >
               <IconArrowUp size={18} />
-              Retour en haut
+              {t("backToTop")}
             </a>
           </div>
         </div>
@@ -115,13 +100,9 @@ export default function Footer() {
         <div className="my-10 border-t border-slate-800" />
 
         <div className="flex flex-col items-center justify-between gap-3 text-sm text-slate-400 md:flex-row">
-          <p>
-            © {new Date().getFullYear()} Komoe Komoe Emile. Tous droits réservés.
-          </p>
+          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
 
-          <p>
-            Conçu avec Next.js, TypeScript, Tailwind CSS & Framer Motion.
-          </p>
+          <p>{t("builtWith")}</p>
         </div>
       </div>
     </footer>

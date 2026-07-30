@@ -1,58 +1,30 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import SectionReveal from "@/components/SectionReveal";
 
-interface Project {
+interface ProjectContent {
   title: string;
   description: string;
   technologies: string[];
   status: string;
-  badge: string;
-  featured: boolean;
-  image?: {
-    src: string;
-    alt: string;
-  };
+  badgeLabel: string;
+  imageAlt?: string;
 }
 
-const projects: Project[] = [
-  {
-    title: "AKYNOVA GROUP",
-    description:
-      "Plateforme fullstack complète pour un groupe de services ivoirien à cinq départements — espace client, panel d'administration, blog, authentification par rôles.",
-    technologies: [
-      "Next.js 16",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "NextAuth v5",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
-    status: "Terminé — démo sur demande",
-    badge: "Projet principal",
-    featured: true,
-    image: {
-      src: "/images/akynova.webp",
-      alt: "Page d'accueil de la plateforme AKYNOVA GROUP, groupe de services ivoirien à cinq départements",
-    },
-  },
-  {
-    title: "FiscaCI",
-    description:
-      "Plateforme SaaS de gestion de la TVA et de conformité fiscale destinée aux entreprises ivoiriennes.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-    ],
-    status: "En développement",
-    badge: "Étude de faisabilité",
-    featured: false,
-  },
+const projectMeta: { featured: boolean; image?: string }[] = [
+  { featured: true, image: "/images/akynova.webp" },
+  { featured: false },
 ];
 
-export default function Projects() {
+export default async function Projects() {
+  const t = await getTranslations("Projects");
+  const items = t.raw("items") as ProjectContent[];
+
+  const projects = items.map((item, index) => ({
+    ...item,
+    ...projectMeta[index],
+  }));
+
   return (
     <section
       id="projects"
@@ -72,16 +44,15 @@ export default function Projects() {
             text-blue-300
           "
         >
-          Réalisations
+          {t("badge")}
         </span>
 
         <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-          Mes projets
+          {t("title")}
         </h2>
 
         <p className="mt-4 max-w-2xl text-slate-400">
-          Une sélection de projets fullstack modernes, conçus avec des
-          architectures évolutives, performantes et sécurisées.
+          {t("intro")}
         </p>
       </div>
 
@@ -117,8 +88,8 @@ export default function Projects() {
               {project.image && (
                 <div className="relative -mx-6 -mt-6 mb-6 aspect-[2/1] overflow-hidden rounded-t-2xl border-b border-slate-800">
                   <Image
-                    src={project.image.src}
-                    alt={project.image.alt}
+                    src={project.image}
+                    alt={project.imageAlt ?? project.title}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -135,7 +106,7 @@ export default function Projects() {
                         : "mb-4 inline-flex rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-400"
                     }
                   >
-                    {project.badge}
+                    {project.badgeLabel}
                   </span>
 
                   <span className="text-xs text-slate-500">

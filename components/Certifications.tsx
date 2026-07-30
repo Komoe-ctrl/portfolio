@@ -1,23 +1,28 @@
+import { getTranslations } from "next-intl/server";
 import SectionReveal from "@/components/SectionReveal";
 
-const certifications = [
-  {
-    name: "CSCU",
-    fullName: "Certified Secure Computer User",
-    organization: "EC-Council",
-    status: "Obtenu",
-    year: "2025",
-  },
-  {
-    name: "CND",
-    fullName: "Certified Network Defender",
-    organization: "EC-Council",
-    status: "En cours",
-    year: "2025",
-  },
+interface CertificationContent {
+  name: string;
+  fullName: string;
+  organization: string;
+  status: string;
+  year: string;
+}
+
+const certMeta: { obtained: boolean }[] = [
+  { obtained: true },
+  { obtained: false },
 ];
 
-export default function Certifications() {
+export default async function Certifications() {
+  const t = await getTranslations("Certifications");
+  const items = t.raw("items") as CertificationContent[];
+
+  const certifications = items.map((item, index) => ({
+    ...item,
+    ...certMeta[index],
+  }));
+
   return (
     <section
       id="certifications"
@@ -33,17 +38,15 @@ export default function Certifications() {
             text-sm text-blue-300
           "
         >
-          Certifications
+          {t("badge")}
         </span>
 
         <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-          Certifications EC-Council
+          {t("title")}
         </h2>
 
         <p className="mt-4 max-w-2xl text-slate-400">
-          Certifications internationales en cybersécurité attestant de
-          compétences en sécurité informatique, protection des systèmes
-          et défense des réseaux.
+          {t("intro")}
         </p>
       </div>
 
@@ -73,7 +76,7 @@ export default function Certifications() {
 
                 <span
                   className={`rounded-full px-3 py-1 text-xs font-medium ${
-                    cert.status === "Obtenu"
+                    cert.obtained
                       ? "bg-green-500/10 text-green-400"
                       : "bg-amber-500/10 text-amber-400"
                   }`}
@@ -92,7 +95,7 @@ export default function Certifications() {
 
               <div className="flex items-center justify-between border-t border-slate-800 pt-4">
                 <span className="text-sm text-slate-400">
-                  Année : {cert.year}
+                  {t("yearLabel", { year: cert.year })}
                 </span>
 
                 <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />

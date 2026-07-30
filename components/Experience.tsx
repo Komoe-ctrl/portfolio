@@ -1,39 +1,24 @@
+import { getTranslations } from "next-intl/server";
 import SectionReveal from "@/components/SectionReveal";
 
-export default function Experience() {
-  const experiences = [
-    {
-      period: "Janv. 2025 — Aujourd'hui",
-      title: "Formateur Indépendant",
-      company: "Projet PEJEDEC / Freelance",
-      description:
-        "Formation aux outils numériques, bureautique et accompagnement des jeunes aux compétences digitales.",
-    },
-    {
-      period: "2024 — 2025",
-      title: "Développeur Web Fullstack",
-      company: "Beryl Informatique",
-      description:
-        "Développement d'applications web modernes avec React, Angular, Laravel, NestJS et PostgreSQL.",
-    },
-  ];
+interface Job {
+  period: string;
+  title: string;
+  company: string;
+  description: string;
+}
 
-  const education = [
-    {
-      period: "2023 — 2024",
-      title: "BTS IDA",
-      school: "ITES II Plateaux",
-      description:
-        "Informatique de Développement et d'Application.",
-    },
-    {
-      period: "2022",
-      title: "Baccalauréat Série D",
-      school: "Groupe Scolaire Amicha Paul",
-      description:
-        "Sciences.",
-    },
-  ];
+interface EducationItem {
+  period: string;
+  title: string;
+  school: string;
+  description: string;
+}
+
+export default async function Experience() {
+  const t = await getTranslations("Experience");
+  const experiences = t.raw("jobs") as Job[];
+  const education = t.raw("education") as EducationItem[];
 
   return (
     <section
@@ -48,23 +33,22 @@ export default function Experience() {
             px-4 py-2 text-sm text-blue-300
           "
         >
-          Parcours
+          {t("badge")}
         </span>
 
         <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-          Expérience & Formation
+          {t("title")}
         </h2>
 
         <p className="mt-4 max-w-2xl text-slate-400">
-          Mon parcours professionnel et académique dans le développement
-          logiciel et la cybersécurité.
+          {t("intro")}
         </p>
       </div>
 
       <div className="grid gap-16 lg:grid-cols-2">
         <div>
           <h3 className="mb-8 text-xl font-semibold text-white">
-            Expérience professionnelle
+            {t("workTitle")}
           </h3>
 
           <div className="relative space-y-10 border-l border-slate-800 pl-8">
@@ -119,7 +103,7 @@ export default function Experience() {
 
         <div>
           <h3 className="mb-8 text-xl font-semibold text-white">
-            Formation
+            {t("educationTitle")}
           </h3>
 
           <div className="relative space-y-10 border-l border-slate-800 pl-8">

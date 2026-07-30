@@ -1,44 +1,38 @@
-"use client";
-
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function Hero() {
+export default async function Hero() {
+  const t = await getTranslations("Hero");
+
   return (
     <section
-      id="about"
+      id="hero"
       className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-12 px-6 py-24 md:flex-row"
     >
       <div className="flex-1">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
           <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
-          Disponible pour missions & emploi
+          {t("badge")}
         </div>
 
         <p className="mb-3 text-sm uppercase tracking-[0.25em] text-blue-400">
-          Fullstack Developer • Cybersecurity
+          {t("role")}
         </p>
 
         <h1 className="mb-6 text-5xl font-bold leading-tight md:text-7xl">
-          Komoe Komoe
+          {t("firstName")}
           <br />
           <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-            Emile
+            {t("lastName")}
           </span>
         </h1>
 
         <p className="mb-6 max-w-xl text-lg leading-relaxed text-slate-400">
-          Je développe des applications web modernes, sécurisées et
-          évolutives avec Next.js, TypeScript, NestJS et PostgreSQL.
-        </p>
-
-        <p className="mb-8 max-w-xl text-slate-500">
-          Passionné par la cybersécurité, j&apos;accorde une attention
-          particulière à la performance, à l&apos;expérience utilisateur et à
-          la qualité du code.
+          {t("intro")}
         </p>
 
         <div className="mb-8 inline-flex items-center rounded-full border border-slate-800 bg-slate-900 px-4 py-2 text-sm text-slate-300">
-          Actuellement : FiscaCI — Plateforme SaaS de gestion TVA
+          {t("currentProject")}
         </div>
 
         <div className="flex flex-wrap gap-4">
@@ -46,7 +40,7 @@ export default function Hero() {
             href="#projects"
             className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-blue-500"
           >
-            Voir mes projets
+            {t("ctaProjects")}
           </a>
 
           <a
@@ -54,32 +48,38 @@ export default function Hero() {
             download
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Télécharger le CV de Komoe Emile au format PDF"
+            aria-label={t("ctaCvAria")}
             className="rounded-xl border border-slate-700 px-6 py-3 font-medium transition-all duration-300 hover:border-blue-400 hover:text-blue-400"
           >
-            Télécharger CV
+            {t("ctaCv")}
           </a>
         </div>
 
         <div className="mt-10 flex gap-10 border-t border-slate-800 pt-8">
           <div>
-            <div className="text-3xl font-bold text-blue-400">2+</div>
+            <div className="text-3xl font-bold text-blue-400">
+              {t("statExperienceValue")}
+            </div>
             <div className="text-sm text-slate-400">
-              Ans d&apos;expérience
+              {t("statExperienceLabel")}
             </div>
           </div>
 
           <div>
-            <div className="text-3xl font-bold text-blue-400">10+</div>
+            <div className="text-3xl font-bold text-blue-400">
+              {t("statTrainedValue")}
+            </div>
             <div className="text-sm text-slate-400">
-              Technologies
+              {t("statTrainedLabel")}
             </div>
           </div>
 
           <div>
-            <div className="text-3xl font-bold text-blue-400">2</div>
+            <div className="text-3xl font-bold text-blue-400">
+              {t("statCertValue")}
+            </div>
             <div className="text-sm text-slate-400">
-              Certifications
+              {t("statCertLabel")}
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function Hero() {
 
         <Image
           src="/images/photo.png"
-          alt="Komoe Emile"
+          alt={t("photoAlt")}
           width={260}
           height={260}
           priority

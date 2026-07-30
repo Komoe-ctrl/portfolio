@@ -1,71 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "React.js",
-      "Next.js",
-      "Angular",
-      "Tailwind CSS",
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      "PHP",
-      "Laravel",
-      "Node.js",
-      "NestJS",
-      "REST API",
-      "JWT",
-    ],
-  },
-  {
-    title: "Base de données",
-    skills: [
-      "SQL",
-      "PostgreSQL",
-      "MySQL",
-      "Prisma ORM",
-    ],
-  },
-  {
-    title: "Cybersécurité",
-    skills: [
-      "CSCU",
-      "CND (en cours)",
-      "Sécurité Réseau",
-      "Analyse des risques",
-    ],
-  },
-  {
-    title: "Outils",
-    skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Figma",
-      "WordPress",
-      "Postman",
-    ],
-  },
-  {
-    title: "Langues",
-    skills: [
-      "Français",
-      "Anglais",
-    ],
-  },
-];
+interface SkillCategory {
+  title: string;
+  skills: string[];
+}
 
 export default function Skills() {
+  const t = useTranslations("Skills");
+  const categories = t.raw("categories") as SkillCategory[];
+
   return (
     <section
       id="skills"
@@ -85,22 +31,20 @@ export default function Skills() {
             text-blue-300
           "
         >
-          Expertise
+          {t("badge")}
         </span>
 
         <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-          Compétences techniques
+          {t("title")}
         </h2>
 
         <p className="mt-4 max-w-2xl text-slate-400">
-          Stack moderne frontend, backend et cybersécurité
-          pour créer des applications performantes et
-          sécurisées.
+          {t("intro")}
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {skillCategories.map((category) => (
+        {categories.map((category) => (
           <motion.div
             key={category.title}
             whileHover={{

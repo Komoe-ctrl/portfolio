@@ -2,18 +2,21 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState("#about");
+  const t = useTranslations("Navbar");
 
   const links = [
-    { href: "#about", label: "À propos" },
-    { href: "#skills", label: "Compétences" },
-    { href: "#projects", label: "Projets" },
-    { href: "#experience", label: "Expérience" },
-    { href: "#contact", label: "Contact" },
+    { href: "#about", label: t("about") },
+    { href: "#skills", label: t("skills") },
+    { href: "#projects", label: t("projects") },
+    { href: "#experience", label: t("experience") },
+    { href: "#contact", label: t("contact") },
   ];
 
   // Scroll spy (section active)
@@ -38,6 +41,7 @@ export default function Navbar() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -46,10 +50,12 @@ export default function Navbar() {
 
         {/* LOGO */}
         <a
-          href="#about"
+          href="#hero"
           className="text-xl font-bold tracking-tight"
         >
-          Komoe<span className="text-blue-400">.</span>dev
+          {t("brandName")}
+          <span className="text-blue-400">.</span>
+          {t("brandSuffix")}
         </a>
 
         {/* DESKTOP LINKS */}
@@ -76,33 +82,35 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="
-            hidden
-            rounded-xl
-            bg-blue-600
-            px-4
-            py-2
-            text-sm
-            font-medium
-            shadow-lg
-            shadow-blue-500/20
-            transition-all
-            hover:scale-105
-            hover:bg-blue-500
-            md:block
-          "
-        >
-          Me contacter
-        </a>
+        <div className="hidden items-center gap-6 md:flex">
+          <LanguageSwitcher />
+
+          {/* CTA */}
+          <a
+            href="#contact"
+            className="
+              rounded-xl
+              bg-blue-600
+              px-4
+              py-2
+              text-sm
+              font-medium
+              shadow-lg
+              shadow-blue-500/20
+              transition-all
+              hover:scale-105
+              hover:bg-blue-500
+            "
+          >
+            {t("cta")}
+          </a>
+        </div>
 
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 md:hidden text-slate-200"
-          aria-label="Menu"
+          aria-label={t("menuAria")}
         >
           {isOpen ? <IconX size={26} /> : <IconMenu2 size={26} />}
         </button>
@@ -146,8 +154,10 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="mt-2 rounded-xl bg-blue-600 px-4 py-2 text-center text-sm font-medium"
               >
-                Me contacter
+                {t("cta")}
               </a>
+
+              <LanguageSwitcher className="pt-2" />
             </div>
           </motion.div>
         )}
