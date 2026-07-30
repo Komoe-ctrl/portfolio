@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionReveal from "@/components/SectionReveal";
 
 interface Project {
@@ -5,10 +6,36 @@ interface Project {
   description: string;
   technologies: string[];
   status: string;
+  badge: string;
   featured: boolean;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 const projects: Project[] = [
+  {
+    title: "AKYNOVA GROUP",
+    description:
+      "Plateforme fullstack complète pour un groupe de services ivoirien à cinq départements — espace client, panel d'administration, blog, authentification par rôles.",
+    technologies: [
+      "Next.js 16",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "NextAuth v5",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    status: "Terminé — démo sur demande",
+    badge: "Projet principal",
+    featured: true,
+    image: {
+      src: "/images/akynova.webp",
+      alt: "Page d'accueil de la plateforme AKYNOVA GROUP, groupe de services ivoirien à cinq départements",
+    },
+  },
   {
     title: "FiscaCI",
     description:
@@ -20,30 +47,7 @@ const projects: Project[] = [
       "Prisma",
     ],
     status: "En développement",
-    featured: true,
-  },
-  {
-    title: "Gestion RH",
-    description:
-      "Application de gestion des employés, des congés, des présences et de l'administration des ressources humaines.",
-    technologies: [
-      "Laravel",
-      "React",
-      "MySQL",
-    ],
-    status: "Projet personnel",
-    featured: false,
-  },
-  {
-    title: "Dashboard Cybersécurité",
-    description:
-      "Plateforme de supervision réseau et de visualisation des événements de sécurité.",
-    technologies: [
-      "Next.js",
-      "NestJS",
-      "PostgreSQL",
-    ],
-    status: "En cours",
+    badge: "Étude de faisabilité",
     featured: false,
   },
 ];
@@ -81,7 +85,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         {projects.map((project, index) => (
           <SectionReveal
             key={project.title}
@@ -110,29 +114,29 @@ export default function Projects() {
                 "
               />
 
+              {project.image && (
+                <div className="relative -mx-6 -mt-6 mb-6 aspect-[2/1] overflow-hidden rounded-t-2xl border-b border-slate-800">
+                  <Image
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              )}
+
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  {project.featured ? (
-                    <span
-                      className="
-                        mb-4 inline-flex rounded-full
-                        bg-blue-500/10 px-3 py-1
-                        text-xs font-medium text-blue-400
-                      "
-                    >
-                      Projet principal
-                    </span>
-                  ) : (
-                    <span
-                      className="
-                        mb-4 inline-flex rounded-full
-                        bg-slate-800 px-3 py-1
-                        text-xs text-slate-400
-                      "
-                    >
-                      Projet
-                    </span>
-                  )}
+                  <span
+                    className={
+                      project.featured
+                        ? "mb-4 inline-flex rounded-full bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-400"
+                        : "mb-4 inline-flex rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-400"
+                    }
+                  >
+                    {project.badge}
+                  </span>
 
                   <span className="text-xs text-slate-500">
                     {project.status}
