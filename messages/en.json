@@ -52,7 +52,25 @@
   "About": {
     "badge": "About",
     "title": "About me",
-    "paragraph": "I'm passionate about cybersecurity, and I pay close attention to performance, user experience, and code quality in everything I build."
+    "paragraph": "Fullstack web developer based in Abidjan, I build secure applications with close attention to code reliability rather than protection as an afterthought. I hold a BTS in Applications Development (ITES II Plateaux, 2024) and I'm currently looking for a fullstack developer role.",
+    "facts": [
+      {
+        "title": "Experience",
+        "description": "Web developer at Beryl Informatique (2024–2025), including a business digitalization project delivered in 2025."
+      },
+      {
+        "title": "Field training",
+        "description": "Trainer for Ebenyx Technologie as part of the PEJEDEC 3 program: a 3-day session in Ferkessédougou for 50 beneficiaries on applying digital tools to their trade and raising security awareness."
+      },
+      {
+        "title": "Core stack",
+        "description": "Next.js, React, TypeScript, Tailwind, Prisma, PostgreSQL — plus Angular with NestJS."
+      },
+      {
+        "title": "Security",
+        "description": "CSCU certified (EC-Council), CND in progress: security shapes how I design an application, not just how I defend it afterward."
+      }
+    ]
   },
   "Skills": {
     "badge": "Expertise",

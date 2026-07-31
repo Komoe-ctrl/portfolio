@@ -52,7 +52,25 @@
   "About": {
     "badge": "À propos",
     "title": "À propos de moi",
-    "paragraph": "Passionné par la cybersécurité, j'accorde une attention particulière à la performance, à l'expérience utilisateur et à la qualité du code."
+    "paragraph": "Développeur web fullstack basé à Abidjan, je conçois des applications sécurisées avec une attention portée à la fiabilité du code plutôt qu'à la seule protection après coup. Titulaire d'un BTS Informatique Développeur d'Applications (ITES II Plateaux, 2024), je suis actuellement à la recherche d'un poste de développeur fullstack.",
+    "facts": [
+      {
+        "title": "Expérience",
+        "description": "Développeur web chez Beryl Informatique (2024–2025), dont une mission de digitalisation d'entreprise menée en 2025."
+      },
+      {
+        "title": "Formation terrain",
+        "description": "Formateur pour Ebenyx Technologie dans le cadre du PEJEDEC 3 : session de 3 jours à Ferkessédougou auprès de 50 bénéficiaires, sur le numérique appliqué à leur activité et la sensibilisation à la sécurité."
+      },
+      {
+        "title": "Stack principale",
+        "description": "Next.js, React, TypeScript, Tailwind, Prisma, PostgreSQL — et Angular avec NestJS."
+      },
+      {
+        "title": "Sécurité",
+        "description": "Certifié CSCU (EC-Council), CND en préparation : la sécurité oriente ma façon de concevoir une application, pas seulement de la protéger."
+      }
+    ]
   },
   "Skills": {
     "badge": "Expertise",
