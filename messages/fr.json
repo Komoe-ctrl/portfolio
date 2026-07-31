@@ -89,7 +89,22 @@
     "badge": "Réalisations",
     "title": "Mes projets",
     "intro": "Une sélection de projets fullstack modernes, conçus avec des architectures évolutives, performantes et sécurisées.",
+    "linksLabels": {
+      "demo": "Démo",
+      "api": "Documentation API",
+      "code": "Code source"
+    },
+    "demoCredentialsLabel": "Identifiants de démo",
+    "demoNote": "L'API tourne sur une offre gratuite : la première connexion peut prendre une vingtaine de secondes, le temps que le serveur se réveille.",
     "items": [
+      {
+        "title": "LaveNet",
+        "description": "LaveNet — application web de blanchisserie (lavage, repassage, pressing) pour Abidjan : commande en ligne, créneaux de retrait et livraison, suivi de commande, back-office.",
+        "statusDetail": "Fondations déployées : Angular 21 en standalone, signals et mode zoneless avec prerendering ; authentification JWT avec refresh token en cookie cross-domain ; contrat d'API généré et vérifié automatiquement ; CI ; PostgreSQL managée (Neon). Catalogue, commandes, paiement et back-office à venir.",
+        "technologies": ["Nx", "Angular 21", "NestJS 11", "Prisma", "PostgreSQL (Neon)", "TypeScript", "Tailwind CSS"],
+        "status": "En cours",
+        "badgeLabel": "Projet principal"
+      },
       {
         "title": "AKYNOVA GROUP",
         "description": "Plateforme fullstack complète pour un groupe de services ivoirien à cinq départements — espace client, panel d'administration, blog, authentification par rôles.",

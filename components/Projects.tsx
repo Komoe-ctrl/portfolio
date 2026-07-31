@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { IconBrandGithub, IconExternalLink, IconFileText } from "@tabler/icons-react";
 import SectionReveal from "@/components/SectionReveal";
 
 interface ProjectContent {
@@ -9,16 +10,47 @@ interface ProjectContent {
   status: string;
   badgeLabel: string;
   imageAlt?: string;
+  statusDetail?: string;
 }
 
-const projectMeta: { featured: boolean; image?: string }[] = [
-  { featured: true, image: "/images/akynova.webp" },
-  { featured: false },
+interface ProjectLinks {
+  demo?: string;
+  api?: string;
+  code?: string;
+}
+
+const projectMeta: {
+  featured: boolean;
+  image?: string;
+  links?: ProjectLinks;
+  demoCredentials?: { email: string; password: string };
+}[] = [
+  {
+    featured: true,
+    links: {
+      demo: "https://lavenet.vercel.app",
+      api: "https://lavenet-api.onrender.com/docs",
+      code: "https://github.com/Komoe-ctrl/lavenet",
+    },
+    demoCredentials: { email: "admin@lavenet.ci", password: "Demo1234!" },
+  },
+  {
+    featured: true,
+    image: "/images/akynova.webp",
+  },
+  {
+    featured: false,
+  },
 ];
 
 export default async function Projects() {
   const t = await getTranslations("Projects");
   const items = t.raw("items") as ProjectContent[];
+  const linksLabels = t.raw("linksLabels") as {
+    demo: string;
+    api: string;
+    code: string;
+  };
 
   const projects = items.map((item, index) => ({
     ...item,
@@ -56,7 +88,7 @@ export default async function Projects() {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <SectionReveal
             key={project.title}
@@ -64,7 +96,7 @@ export default async function Projects() {
           >
             <div
               className={`
-                group relative rounded-2xl border p-6
+                group relative flex h-full flex-col rounded-2xl border p-6
                 transition-all duration-300
                 hover:-translate-y-2
                 hover:border-blue-500/40
@@ -91,13 +123,13 @@ export default async function Projects() {
                     src={project.image}
                     alt={project.imageAlt ?? project.title}
                     fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               )}
 
-              <div className="relative">
+              <div className="relative flex flex-1 flex-col">
                 <div className="flex items-center justify-between">
                   <span
                     className={
@@ -118,9 +150,71 @@ export default async function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="mb-5 text-sm leading-relaxed text-slate-400">
+                <p className="mb-3 text-sm leading-relaxed text-slate-400">
                   {project.description}
                 </p>
+
+                {project.statusDetail && (
+                  <p className="mb-4 text-xs leading-relaxed text-slate-500">
+                    {project.statusDetail}
+                  </p>
+                )}
+
+                {project.links && (
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {project.links.demo && (
+                      <a
+                        href={project.links.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800/50 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:border-blue-400 hover:text-blue-400"
+                      >
+                        <IconExternalLink size={14} />
+                        {linksLabels.demo}
+                      </a>
+                    )}
+
+                    {project.links.api && (
+                      <a
+                        href={project.links.api}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800/50 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:border-blue-400 hover:text-blue-400"
+                      >
+                        <IconFileText size={14} />
+                        {linksLabels.api}
+                      </a>
+                    )}
+
+                    {project.links.code && (
+                      <a
+                        href={project.links.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800/50 px-3 py-1.5 text-xs text-slate-300 transition-colors hover:border-blue-400 hover:text-blue-400"
+                      >
+                        <IconBrandGithub size={14} />
+                        {linksLabels.code}
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                {project.demoCredentials && (
+                  <div className="mb-4 rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2">
+                    <p className="text-[11px] uppercase tracking-wide text-slate-500">
+                      {t("demoCredentialsLabel")}
+                    </p>
+
+                    <p className="mt-1 font-mono text-xs text-slate-300">
+                      {project.demoCredentials.email} / {project.demoCredentials.password}
+                    </p>
+
+                    <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
+                      {t("demoNote")}
+                    </p>
+                  </div>
+                )}
 
                 <div className="mb-6 flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
@@ -141,7 +235,7 @@ export default async function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-end">
+                <div className="mt-auto flex items-center justify-end">
                   <div className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />
                 </div>
               </div>
