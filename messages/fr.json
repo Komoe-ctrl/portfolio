@@ -124,12 +124,12 @@
         "badgeLabel": "Projet principal"
       },
       {
-        "title": "AKYNOVA GROUP",
-        "description": "Plateforme fullstack complète pour un groupe de services ivoirien à cinq départements — espace client, panel d'administration, blog, authentification par rôles.",
-        "technologies": ["Next.js 16", "TypeScript", "PostgreSQL", "Prisma", "NextAuth v5", "Tailwind CSS", "Framer Motion"],
-        "status": "Terminé — démo sur demande",
+        "title": "AKYNOVA GROUP — Plateforme de services",
+        "description": "Plateforme web full-stack pour un groupe de services ivoirien réunissant cinq départements. Mise en relation entre demandeurs et prestataires vérifiés, suivi de dossier en temps réel, système multi-rôles et panel d'administration complet. Projet client livré de bout en bout.",
+        "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth", "Framer Motion", "Vercel", "Neon"],
+        "status": "Terminé — en production",
         "badgeLabel": "Projet principal",
-        "imageAlt": "Page d'accueil de la plateforme AKYNOVA GROUP, groupe de services ivoirien à cinq départements"
+        "imageAlt": "Aperçu de la plateforme AKYNOVA GROUP"
       },
       {
         "title": "FiscalCI",
