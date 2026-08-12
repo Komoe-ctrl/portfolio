@@ -6,24 +6,31 @@ import { useTranslations } from "next-intl";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-export default function Navbar() {
+/**
+ * `homeHref` : préfixe des ancres quand la barre n'est pas sur la page d'accueil
+ * (par exemple `/fr` sur une page projet). Vide sur l'accueil, où les ancres
+ * restent relatives et où le scroll spy s'applique.
+ */
+export default function Navbar({ homeHref = "" }: { homeHref?: string }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState("#about");
+  const [active, setActive] = useState(homeHref ? "" : "#about");
   const t = useTranslations("Navbar");
 
   const links = [
-    { href: "#about", label: t("about") },
-    { href: "#skills", label: t("skills") },
-    { href: "#projects", label: t("projects") },
-    { href: "#experience", label: t("experience") },
-    { href: "#contact", label: t("contact") },
-  ];
+    { hash: "#about", label: t("about") },
+    { hash: "#skills", label: t("skills") },
+    { hash: "#projects", label: t("projects") },
+    { hash: "#experience", label: t("experience") },
+    { hash: "#contact", label: t("contact") },
+  ].map((link) => ({ ...link, href: `${homeHref}${link.hash}` }));
 
-  // Scroll spy (section active)
+  // Scroll spy (section active) — les sections ne sont présentes que sur l'accueil
   useEffect(() => {
+    if (homeHref) return;
+
     const handleScroll = () => {
       const sections = links.map((l) =>
-        document.querySelector(l.href)
+        document.querySelector(l.hash)
       );
 
       sections.forEach((section, i) => {
@@ -32,7 +39,7 @@ export default function Navbar() {
         const rect = section.getBoundingClientRect();
 
         if (rect.top <= 160 && rect.bottom >= 160) {
-          setActive(links[i].href);
+          setActive(links[i].hash);
         }
       });
     };
@@ -50,7 +57,7 @@ export default function Navbar() {
 
         {/* LOGO */}
         <a
-          href="#hero"
+          href={`${homeHref}#hero`}
           className="text-xl font-bold tracking-tight"
         >
           {t("brandName")}
@@ -61,7 +68,7 @@ export default function Navbar() {
         {/* DESKTOP LINKS */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => {
-            const isActive = active === link.href;
+            const isActive = active === link.hash;
 
             return (
               <a
@@ -87,7 +94,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <a
-            href="#contact"
+            href={`${homeHref}#contact`}
             className="
               rounded-xl
               bg-blue-600
@@ -128,7 +135,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-5 p-6">
               {links.map((link) => {
-                const isActive = active === link.href;
+                const isActive = active === link.hash;
 
                 return (
                   <a
@@ -150,7 +157,7 @@ export default function Navbar() {
               })}
 
               <a
-                href="#contact"
+                href={`${homeHref}#contact`}
                 onClick={() => setIsOpen(false)}
                 className="mt-2 rounded-xl bg-blue-600 px-4 py-2 text-center text-sm font-medium"
               >

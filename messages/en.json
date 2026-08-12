@@ -79,66 +79,231 @@
     "categories": [
       {
         "title": "Frontend",
-        "skills": ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Angular", "Tailwind CSS", "Framer Motion"]
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "TypeScript",
+          "React.js",
+          "Next.js",
+          "Angular",
+          "Tailwind CSS",
+          "Framer Motion"
+        ]
       },
       {
         "title": "Backend",
-        "skills": ["PHP", "Node.js", "NestJS", "REST API", "JWT", "Resend"]
+        "skills": [
+          "PHP",
+          "Node.js",
+          "NestJS",
+          "REST API",
+          "JWT",
+          "Resend"
+        ]
       },
       {
         "title": "Database",
-        "skills": ["SQL", "PostgreSQL", "MySQL", "Prisma ORM"]
+        "skills": [
+          "SQL",
+          "PostgreSQL",
+          "MySQL",
+          "Prisma ORM"
+        ]
       },
       {
         "title": "Cybersecurity",
-        "skills": ["CSCU", "CND (in progress)", "Network Security", "Risk Analysis"]
+        "skills": [
+          "CSCU",
+          "CND (in progress)",
+          "Network Security",
+          "Risk Analysis"
+        ]
       },
       {
         "title": "Tools",
-        "skills": ["Git", "GitHub", "VS Code", "Figma", "WordPress", "Postman"]
+        "skills": [
+          "Git",
+          "GitHub",
+          "VS Code",
+          "Figma",
+          "WordPress",
+          "Postman"
+        ]
       },
       {
         "title": "Languages",
-        "skills": ["French", "English"]
+        "skills": [
+          "French",
+          "English"
+        ]
       }
     ]
   },
   "Projects": {
     "badge": "Featured work",
     "title": "My projects",
-    "intro": "A selection of modern fullstack projects, built on scalable, high-performance, secure architectures.",
+    "intro": "Three projects at three different stages. Each card opens a detail page: what works today, what is still missing, and the technical calls behind it.",
+    "cardCta": "See the details",
+    "backToProjects": "Back to projects",
+    "allProjects": "All projects",
     "linksLabels": {
       "demo": "Demo",
       "api": "API docs",
       "code": "Source code"
     },
-    "demoCredentialsLabel": "Demo credentials",
-    "demoNote": "The API runs on a free tier — the first request can take about 20 seconds while the server wakes up.",
-    "items": [
-      {
+    "noVisual": "No screenshot yet — development hasn't started.",
+    "sections": {
+      "features": "What works online",
+      "roadmap": "Not built yet",
+      "roadmapNote": "These features are planned, but they do not exist in the live version.",
+      "decisions": "Technical decisions",
+      "stack": "Tech stack",
+      "credentials": "Demo credentials",
+      "gallery": "Screenshots",
+      "state": "Where the project stands",
+      "links": "Links"
+    },
+    "credentialsRoles": {
+      "client": "Customer area",
+      "admin": "Back office"
+    },
+    "contactCtaTitle": "A question about one of these projects?",
+    "contactCtaLabel": "Get in touch",
+    "items": {
+      "lavenet": {
         "title": "LaveNet",
-        "description": "LaveNet — a laundry service web app (washing, ironing, dry cleaning) for Abidjan: online ordering, pickup and delivery slots, order tracking, and a back office.",
-        "statusDetail": "Foundations deployed: Angular 21 in standalone, signals, and zoneless mode with prerendering; JWT authentication with a refresh token in a cross-domain cookie; auto-generated and verified API contract; CI; managed PostgreSQL (Neon). Catalog, ordering, payment, and back office are still to come.",
-        "technologies": ["Nx", "Angular 21", "NestJS 11", "Prisma", "PostgreSQL (Neon)", "TypeScript", "Tailwind CSS"],
         "status": "In progress",
-        "badgeLabel": "Flagship project"
+        "tagline": "A laundry web app for Abidjan: online ordering, pickup and delivery slots, order tracking and a back office. Usable end to end today.",
+        "lead": "A laundry web app (washing, ironing, dry cleaning) for Abidjan. Customers order online, pick their handover method along with their collection and delivery slots, then follow their order as it progresses. On the owner's side, a back office drives the statuses.",
+        "cardTech": [
+          "Nx",
+          "Angular 21",
+          "NestJS",
+          "PostgreSQL"
+        ],
+        "stack": [
+          "Nx monorepo",
+          "Angular 21",
+          "NestJS",
+          "Prisma",
+          "PostgreSQL",
+          "TypeScript",
+          "Tailwind CSS"
+        ],
+        "features": [
+          "Full authentication: sign-up, phone verification by OTP, password reset, profile and address book",
+          "Catalogue and pricing, prerendered so they show up instantly",
+          "Online ordering: cart, handover method, capacity-limited collection and delivery slots, checkout",
+          "Order tracking with a progress timeline, and cancellation",
+          "Back office: status changes driven by a state machine"
+        ],
+        "roadmap": [
+          "Online payment",
+          "Notifications",
+          "Driver routes",
+          "Loyalty programme",
+          "Complaints handling"
+        ],
+        "decisions": [
+          {
+            "title": "Nx monorepo",
+            "description": "The Angular front end and the NestJS API live in the same repository and share their types."
+          },
+          {
+            "title": "Angular 21, zoneless",
+            "description": "Signals for state, no more zone.js, and prerendering for the public pages (catalogue, pricing) so the first paint is immediate."
+          },
+          {
+            "title": "API contract generated and checked in CI",
+            "description": "The contract is generated from the back end and diffed on every build: a mismatch between API and front end breaks CI instead of reaching production."
+          },
+          {
+            "title": "State machine for order statuses",
+            "description": "Transitions are validated server-side, so the back office cannot move an order into an inconsistent state."
+          },
+          {
+            "title": "Prisma and PostgreSQL",
+            "description": "Versioned schema, reproducible migrations and a managed database."
+          }
+        ],
+        "note": "Free hosting: the first sign-in can take about twenty seconds while the server wakes up. The public pages are prerendered and show up instantly.",
+        "shotAlts": [
+          "LaveNet home page"
+        ]
       },
-      {
-        "title": "AKYNOVA GROUP — Services Platform",
-        "description": "Full-stack web platform for an Ivorian services group spanning five departments. Connects clients with verified providers, with real-time request tracking, a multi-role system and a full admin panel. Delivered end-to-end for a real client.",
-        "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth", "Framer Motion", "Vercel", "Neon"],
-        "status": "Completed — in production",
-        "badgeLabel": "Flagship project",
-        "imageAlt": "Preview of the AKYNOVA GROUP platform"
+      "akynova": {
+        "title": "AKYNOVA GROUP",
+        "status": "Completed",
+        "tagline": "A platform for an Ivorian services group with five departments: marketing site, customer area, admin panel and blog. Client project, delivered and in production.",
+        "lead": "A web platform for an Ivorian services group spanning five departments. The marketing site introduces the group, the customer area handles requests and appointment booking, and the admin panel gives the group control over all of it.",
+        "cardTech": [
+          "Next.js 16",
+          "TypeScript",
+          "Prisma",
+          "PostgreSQL"
+        ],
+        "stack": [
+          "Next.js 16",
+          "TypeScript",
+          "Tailwind CSS v4",
+          "Prisma",
+          "PostgreSQL",
+          "NextAuth v5"
+        ],
+        "features": [
+          "Marketing site: the group and its five departments",
+          "Customer area: requests, appointment booking, profile",
+          "Admin panel",
+          "Blog",
+          "Role-based authentication"
+        ],
+        "roadmap": [],
+        "decisions": [
+          {
+            "title": "Next.js 16 with the App Router",
+            "description": "Server rendering for the public marketing pages, client rendering kept for the authenticated areas."
+          },
+          {
+            "title": "NextAuth v5 and roles",
+            "description": "One authentication layer for two surfaces — the customer area and the admin panel — separated by roles."
+          },
+          {
+            "title": "Prisma and PostgreSQL",
+            "description": "Requests, appointments, blog posts and accounts in a single schema, with versioned migrations."
+          },
+          {
+            "title": "Tailwind CSS v4",
+            "description": "CSS-first configuration, with the group's visual identity carried by theme variables."
+          }
+        ],
+        "note": "This is a client site in production: there are no demo credentials, and the source code isn't public.",
+        "shotAlts": [
+          "AKYNOVA GROUP home page",
+          "Customer area dashboard",
+          "Admin panel overview"
+        ]
       },
-      {
+      "fiscalci": {
         "title": "FiscalCI",
-        "description": "A SaaS platform for VAT management and tax compliance built for Ivorian businesses.",
-        "technologies": ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-        "status": "In development",
-        "badgeLabel": "Feasibility study"
+        "status": "Feasibility study",
+        "tagline": "A planned SaaS platform to automate VAT returns and refund tracking for businesses in Côte d'Ivoire. Development hasn't started.",
+        "lead": "A planned SaaS platform for businesses in Côte d'Ivoire: automated VAT returns and refund tracking. At this stage it is a study — development hasn't started.",
+        "cardTech": [],
+        "stack": [],
+        "features": [],
+        "roadmap": [],
+        "decisions": [],
+        "state": [
+          "Requirements written after reviewing the DGI/FNE technical documentation",
+          "Technical feasibility validated",
+          "Application under way for access to the DGI test environment",
+          "Development not started: no demo, no code to show"
+        ],
+        "note": "",
+        "shotAlts": []
       }
-    ]
+    }
   },
   "Experience": {
     "badge": "Background",
@@ -202,11 +367,28 @@
     "title": "Let's work together",
     "intro": "Available for freelance work, full-time roles, or collaboration on modern web projects.",
     "infos": [
-      { "label": "Email", "value": "komoelogique@gmail.com" },
-      { "label": "Phone", "value": "+225 07 04 44 48 07" },
-      { "label": "Location", "value": "Abidjan, Côte d'Ivoire" },
-      { "label": "GitHub", "value": "github.com/Komoe-ctrl", "link": true },
-      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile-a5559b363", "link": true }
+      {
+        "label": "Email",
+        "value": "komoelogique@gmail.com"
+      },
+      {
+        "label": "Phone",
+        "value": "+225 07 04 44 48 07"
+      },
+      {
+        "label": "Location",
+        "value": "Abidjan, Côte d'Ivoire"
+      },
+      {
+        "label": "GitHub",
+        "value": "github.com/Komoe-ctrl",
+        "link": true
+      },
+      {
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/komoe-komoe-emile-a5559b363",
+        "link": true
+      }
     ],
     "form": {
       "namePlaceholder": "Your name",
