@@ -93,7 +93,7 @@ export default async function Hero() {
           alt={t("photoAlt")}
           width={260}
           height={260}
-          priority
+          preload
           className="relative rounded-full border-4 border-slate-800 shadow-2xl shadow-blue-500/20 transition-transform duration-300 hover:scale-105"
         />
       </div>

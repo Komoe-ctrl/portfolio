@@ -6,16 +6,24 @@ import {
 } from "@tabler/icons-react";
 import { getTranslations } from "next-intl/server";
 
-export default async function Footer() {
+/**
+ * `hrefBase` : préfixe des ancres hors page d'accueil (par exemple `/fr` sur une
+ * page projet, où les sections ciblées n'existent pas dans le document courant).
+ */
+export default async function Footer({
+  hrefBase = "",
+}: {
+  hrefBase?: string;
+}) {
   const t = await getTranslations("Footer");
   const tNav = await getTranslations("Navbar");
 
   const navLinks = [
-    { href: "#about", label: tNav("about") },
-    { href: "#skills", label: tNav("skills") },
-    { href: "#projects", label: tNav("projects") },
-    { href: "#experience", label: tNav("experience") },
-    { href: "#contact", label: tNav("contact") },
+    { href: `${hrefBase}#about`, label: tNav("about") },
+    { href: `${hrefBase}#skills`, label: tNav("skills") },
+    { href: `${hrefBase}#projects`, label: tNav("projects") },
+    { href: `${hrefBase}#experience`, label: tNav("experience") },
+    { href: `${hrefBase}#contact`, label: tNav("contact") },
   ];
 
   return (
@@ -88,7 +96,7 @@ export default async function Footer() {
             </div>
 
             <a
-              href="#hero"
+              href={`${hrefBase}#hero`}
               className="mt-8 inline-flex items-center gap-2 text-sm text-blue-400 transition hover:text-blue-300"
             >
               <IconArrowUp size={18} />

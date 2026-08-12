@@ -8,6 +8,7 @@ interface SectionRevealProps {
   delay?: number;
   duration?: number;
   y?: number;
+  className?: string;
 }
 
 export default function SectionReveal({
@@ -15,9 +16,11 @@ export default function SectionReveal({
   delay = 0,
   duration = 0.6,
   y = 40,
+  className,
 }: SectionRevealProps) {
   return (
     <motion.div
+      className={className}
       initial={{
         opacity: 0,
         y,
