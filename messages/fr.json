@@ -79,66 +79,231 @@
     "categories": [
       {
         "title": "Frontend",
-        "skills": ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Angular", "Tailwind CSS", "Framer Motion"]
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "TypeScript",
+          "React.js",
+          "Next.js",
+          "Angular",
+          "Tailwind CSS",
+          "Framer Motion"
+        ]
       },
       {
         "title": "Backend",
-        "skills": ["PHP", "Node.js", "NestJS", "REST API", "JWT", "Resend"]
+        "skills": [
+          "PHP",
+          "Node.js",
+          "NestJS",
+          "REST API",
+          "JWT",
+          "Resend"
+        ]
       },
       {
         "title": "Base de données",
-        "skills": ["SQL", "PostgreSQL", "MySQL", "Prisma ORM"]
+        "skills": [
+          "SQL",
+          "PostgreSQL",
+          "MySQL",
+          "Prisma ORM"
+        ]
       },
       {
         "title": "Cybersécurité",
-        "skills": ["CSCU", "CND (en cours)", "Sécurité Réseau", "Analyse des risques"]
+        "skills": [
+          "CSCU",
+          "CND (en cours)",
+          "Sécurité Réseau",
+          "Analyse des risques"
+        ]
       },
       {
         "title": "Outils",
-        "skills": ["Git", "GitHub", "VS Code", "Figma", "WordPress", "Postman"]
+        "skills": [
+          "Git",
+          "GitHub",
+          "VS Code",
+          "Figma",
+          "WordPress",
+          "Postman"
+        ]
       },
       {
         "title": "Langues",
-        "skills": ["Français", "Anglais"]
+        "skills": [
+          "Français",
+          "Anglais"
+        ]
       }
     ]
   },
   "Projects": {
     "badge": "Réalisations",
     "title": "Mes projets",
-    "intro": "Une sélection de projets fullstack modernes, conçus avec des architectures évolutives, performantes et sécurisées.",
+    "intro": "Trois projets, trois états d'avancement. Chaque carte mène à une page de détail : ce qui fonctionne aujourd'hui, ce qui reste à faire, et les choix techniques derrière.",
+    "cardCta": "Voir le détail",
+    "backToProjects": "Retour aux projets",
+    "allProjects": "Tous les projets",
     "linksLabels": {
       "demo": "Démo",
       "api": "Documentation API",
       "code": "Code source"
     },
-    "demoCredentialsLabel": "Identifiants de démo",
-    "demoNote": "L'API tourne sur une offre gratuite : la première connexion peut prendre une vingtaine de secondes, le temps que le serveur se réveille.",
-    "items": [
-      {
+    "noVisual": "Pas encore de capture : le développement n'a pas commencé.",
+    "sections": {
+      "features": "Ce qui fonctionne en ligne",
+      "roadmap": "Pas encore développé",
+      "roadmapNote": "Ces fonctionnalités sont prévues, mais elles n'existent pas dans la version en ligne.",
+      "decisions": "Décisions techniques",
+      "stack": "Stack technique",
+      "credentials": "Identifiants de démo",
+      "gallery": "Aperçus",
+      "state": "Où en est le projet",
+      "links": "Liens"
+    },
+    "credentialsRoles": {
+      "client": "Espace client",
+      "admin": "Back-office"
+    },
+    "contactCtaTitle": "Une question sur l'un de ces projets ?",
+    "contactCtaLabel": "Me contacter",
+    "items": {
+      "lavenet": {
         "title": "LaveNet",
-        "description": "LaveNet — application web de blanchisserie (lavage, repassage, pressing) pour Abidjan : commande en ligne, créneaux de retrait et livraison, suivi de commande, back-office.",
-        "statusDetail": "Fondations déployées : Angular 21 en standalone, signals et mode zoneless avec prerendering ; authentification JWT avec refresh token en cookie cross-domain ; contrat d'API généré et vérifié automatiquement ; CI ; PostgreSQL managée (Neon). Catalogue, commandes, paiement et back-office à venir.",
-        "technologies": ["Nx", "Angular 21", "NestJS 11", "Prisma", "PostgreSQL (Neon)", "TypeScript", "Tailwind CSS"],
         "status": "En cours",
-        "badgeLabel": "Projet principal"
+        "tagline": "Application web de blanchisserie pour Abidjan : commande en ligne, créneaux de collecte et de livraison, suivi de commande et back-office. Utilisable de bout en bout dès aujourd'hui.",
+        "lead": "Application web de blanchisserie (lavage, repassage, pressing) pour Abidjan. Le client commande en ligne, choisit son mode de retrait ainsi que ses créneaux de collecte et de livraison, puis suit l'avancement de sa commande. Côté gérant, un back-office pilote les statuts.",
+        "cardTech": [
+          "Nx",
+          "Angular 21",
+          "NestJS",
+          "PostgreSQL"
+        ],
+        "stack": [
+          "Monorepo Nx",
+          "Angular 21",
+          "NestJS",
+          "Prisma",
+          "PostgreSQL",
+          "TypeScript",
+          "Tailwind CSS"
+        ],
+        "features": [
+          "Authentification complète : inscription, vérification du téléphone par OTP, mot de passe oublié, profil et carnet d'adresses",
+          "Catalogue et tarifs, prérendus pour un affichage immédiat",
+          "Commande en ligne : panier, mode de retrait, créneaux de collecte et de livraison à capacité limitée, validation",
+          "Suivi de commande avec frise de progression, et annulation",
+          "Back-office : changement de statut piloté par une machine à états"
+        ],
+        "roadmap": [
+          "Paiement en ligne",
+          "Notifications",
+          "Tournée livreur",
+          "Programme de fidélité",
+          "Réclamations"
+        ],
+        "decisions": [
+          {
+            "title": "Monorepo Nx",
+            "description": "Le front Angular et l'API NestJS vivent dans le même dépôt et partagent leurs types."
+          },
+          {
+            "title": "Angular 21 en mode zoneless",
+            "description": "Signals pour l'état, plus de zone.js, et prerendering des pages publiques (catalogue, tarifs) pour un premier affichage immédiat."
+          },
+          {
+            "title": "Contrat d'API généré et vérifié en CI",
+            "description": "Le contrat est produit depuis le back puis comparé automatiquement à chaque build : une divergence entre l'API et le front casse la CI au lieu de partir en production."
+          },
+          {
+            "title": "Machine à états pour les statuts de commande",
+            "description": "Les transitions sont validées côté serveur : le back-office ne peut pas faire passer une commande dans un état incohérent."
+          },
+          {
+            "title": "Prisma et PostgreSQL",
+            "description": "Schéma versionné, migrations reproductibles et base managée."
+          }
+        ],
+        "note": "Hébergement gratuit : la première connexion peut prendre une vingtaine de secondes, le temps que le serveur se réveille. Les pages publiques, prérendues, s'affichent instantanément.",
+        "shotAlts": [
+          "Page d'accueil de LaveNet"
+        ]
       },
-      {
-        "title": "AKYNOVA GROUP — Plateforme de services",
-        "description": "Plateforme web full-stack pour un groupe de services ivoirien réunissant cinq départements. Mise en relation entre demandeurs et prestataires vérifiés, suivi de dossier en temps réel, système multi-rôles et panel d'administration complet. Projet client livré de bout en bout.",
-        "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "NextAuth", "Framer Motion", "Vercel", "Neon"],
-        "status": "Terminé — en production",
-        "badgeLabel": "Projet principal",
-        "imageAlt": "Aperçu de la plateforme AKYNOVA GROUP"
+      "akynova": {
+        "title": "AKYNOVA GROUP",
+        "status": "Terminé",
+        "tagline": "Plateforme pour un groupe de services ivoirien à cinq départements : site vitrine, espace client, panel d'administration et blog. Projet client livré et en production.",
+        "lead": "Plateforme web pour un groupe de services ivoirien réunissant cinq départements. Le site vitrine présente le groupe, l'espace client permet de déposer des demandes et de prendre rendez-vous, et le panel d'administration donne au groupe la main sur l'ensemble.",
+        "cardTech": [
+          "Next.js 16",
+          "TypeScript",
+          "Prisma",
+          "PostgreSQL"
+        ],
+        "stack": [
+          "Next.js 16",
+          "TypeScript",
+          "Tailwind CSS v4",
+          "Prisma",
+          "PostgreSQL",
+          "NextAuth v5"
+        ],
+        "features": [
+          "Site vitrine : présentation du groupe et de ses cinq départements",
+          "Espace client : demandes, prise de rendez-vous, profil",
+          "Panel d'administration",
+          "Blog",
+          "Authentification par rôles"
+        ],
+        "roadmap": [],
+        "decisions": [
+          {
+            "title": "Next.js 16 et App Router",
+            "description": "Rendu serveur pour les pages publiques du site vitrine, rendu client réservé aux espaces authentifiés."
+          },
+          {
+            "title": "NextAuth v5 et rôles",
+            "description": "Une seule authentification pour deux surfaces, l'espace client et le panel d'administration, séparées par les rôles."
+          },
+          {
+            "title": "Prisma et PostgreSQL",
+            "description": "Demandes, rendez-vous, articles de blog et comptes dans un schéma unique, avec des migrations versionnées."
+          },
+          {
+            "title": "Tailwind CSS v4",
+            "description": "Configuration CSS-first, identité visuelle du groupe portée par des variables de thème."
+          }
+        ],
+        "note": "Site client en production : il n'y a pas d'identifiants de démonstration, et le code n'est pas public.",
+        "shotAlts": [
+          "Page d'accueil du site AKYNOVA GROUP",
+          "Tableau de bord de l'espace client AKYNOVA",
+          "Vue d'ensemble du panel d'administration AKYNOVA"
+        ]
       },
-      {
+      "fiscalci": {
         "title": "FiscalCI",
-        "description": "Plateforme SaaS de gestion de la TVA et de conformité fiscale destinée aux entreprises ivoiriennes.",
-        "technologies": ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
-        "status": "En développement",
-        "badgeLabel": "Étude de faisabilité"
+        "status": "Étude de faisabilité",
+        "tagline": "Projet de plateforme SaaS pour automatiser les déclarations de TVA et le suivi des remboursements des entreprises en Côte d'Ivoire. Le développement n'a pas démarré.",
+        "lead": "Projet de plateforme SaaS destinée aux entreprises en Côte d'Ivoire : automatisation des déclarations de TVA et suivi des remboursements. À ce stade, il s'agit d'une étude — le développement n'a pas commencé.",
+        "cardTech": [],
+        "stack": [],
+        "features": [],
+        "roadmap": [],
+        "decisions": [],
+        "state": [
+          "Cahier des charges rédigé après analyse de la documentation technique DGI/FNE",
+          "Faisabilité technique validée",
+          "Démarches en cours pour l'accès à l'environnement de test de la DGI",
+          "Développement non démarré : ni démo, ni code à montrer"
+        ],
+        "note": "",
+        "shotAlts": []
       }
-    ]
+    }
   },
   "Experience": {
     "badge": "Parcours",
@@ -202,11 +367,28 @@
     "title": "Travaillons ensemble",
     "intro": "Disponible pour des missions freelance, un poste en entreprise ou une collaboration sur des projets web modernes.",
     "infos": [
-      { "label": "Email", "value": "komoelogique@gmail.com" },
-      { "label": "Téléphone", "value": "+225 07 04 44 48 07" },
-      { "label": "Localisation", "value": "Abidjan, Côte d'Ivoire" },
-      { "label": "GitHub", "value": "github.com/Komoe-ctrl", "link": true },
-      { "label": "LinkedIn", "value": "linkedin.com/in/komoe-komoe-emile-a5559b363", "link": true }
+      {
+        "label": "Email",
+        "value": "komoelogique@gmail.com"
+      },
+      {
+        "label": "Téléphone",
+        "value": "+225 07 04 44 48 07"
+      },
+      {
+        "label": "Localisation",
+        "value": "Abidjan, Côte d'Ivoire"
+      },
+      {
+        "label": "GitHub",
+        "value": "github.com/Komoe-ctrl",
+        "link": true
+      },
+      {
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/komoe-komoe-emile-a5559b363",
+        "link": true
+      }
     ],
     "form": {
       "namePlaceholder": "Votre nom",
