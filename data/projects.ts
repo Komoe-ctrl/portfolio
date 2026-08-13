@@ -3,7 +3,7 @@
  * Les textes vivent dans messages/{fr,en}.json sous `Projects.items.<slug>`.
  */
 
-export const PROJECT_SLUGS = ["lavenet", "akynova", "fiscalci"] as const;
+export const PROJECT_SLUGS = ["lavenet", "akynova", "fiscalci", "alentour"] as const;
 
 export type ProjectSlug = (typeof PROJECT_SLUGS)[number];
 
@@ -13,7 +13,8 @@ export type StatusTone = "progress" | "done" | "study";
 export interface ProjectLinks {
   demo?: string;
   api?: string;
-  code?: string;
+  /** Un ou plusieurs dépôts (ex. application mobile + API séparées). */
+  code?: string | string[];
 }
 
 export interface ProjectCredential {
@@ -74,6 +75,18 @@ export const PROJECTS: ProjectMeta[] = [
     shots: [],
     monogram: "FCI",
     links: {},
+  },
+  {
+    slug: "alentour",
+    statusTone: "progress",
+    shots: [],
+    monogram: "ALT",
+    links: {
+      code: [
+        "https://github.com/Komoe-ctrl/Events",
+        "https://github.com/Komoe-ctrl/Events-api",
+      ],
+    },
   },
 ];
 

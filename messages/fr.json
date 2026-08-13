@@ -143,7 +143,7 @@
   "Projects": {
     "badge": "Réalisations",
     "title": "Mes projets",
-    "intro": "Trois projets, trois états d'avancement. Chaque carte mène à une page de détail : ce qui fonctionne aujourd'hui, ce qui reste à faire, et les choix techniques derrière.",
+    "intro": "Quatre projets, à différents stades d'avancement. Chaque carte mène à une page de détail : ce qui fonctionne aujourd'hui, ce qui reste à faire, et les choix techniques derrière.",
     "cardCta": "Voir le détail",
     "backToProjects": "Retour aux projets",
     "allProjects": "Tous les projets",
@@ -325,6 +325,30 @@
           "Développement non démarré : ni démo, ni code à montrer"
         ],
         "note": "Zéro rejet, zéro aller-retour : le produit ne prétend pas accélérer la décision de l'administration, il garantit que le dossier déposé est irréprochable et documenté.",
+        "shotAlts": []
+      },
+      "alentour": {
+        "title": "Alentour",
+        "status": "En cours",
+        "tagline": "Application mobile de découverte, publication et réservation d'événements à Abidjan, triés par distance réelle depuis la position du participant. API terminée, application mobile en cours de branchement.",
+        "lead": "Application mobile de découverte, publication et réservation d'événements à Abidjan. Les participants trouvent les événements triés par distance réelle depuis leur position et réservent leur place ; les organisateurs publient, sous modération. API terminée, application mobile en cours de branchement.",
+        "cardTech": [
+          "React Native",
+          "Expo",
+          "NestJS",
+          "PostgreSQL"
+        ],
+        "stack": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "NestJS",
+          "Prisma",
+          "PostgreSQL"
+        ],
+        "features": [],
+        "roadmap": [],
+        "decisions": [],
         "shotAlts": []
       }
     }
