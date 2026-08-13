@@ -37,7 +37,7 @@
     "firstName": "Komoe Komoe",
     "lastName": "Emile",
     "intro": "Je développe des applications web modernes, sécurisées et évolutives avec Next.js, TypeScript, NestJS et PostgreSQL.",
-    "currentProject": "Actuellement : FiscalCI — Plateforme SaaS de gestion TVA",
+    "currentProject": "Actuellement : FiscalCI — Contrôle de conformité factures & remboursement de TVA",
     "ctaProjects": "Voir mes projets",
     "ctaCv": "Télécharger CV",
     "ctaCvAria": "Télécharger le CV de Komoe Emile au format PDF",
@@ -287,20 +287,44 @@
       "fiscalci": {
         "title": "FiscalCI",
         "status": "Étude de faisabilité",
-        "tagline": "Projet de plateforme SaaS pour automatiser les déclarations de TVA et le suivi des remboursements des entreprises en Côte d'Ivoire. Le développement n'a pas démarré.",
-        "lead": "Projet de plateforme SaaS destinée aux entreprises en Côte d'Ivoire : automatisation des déclarations de TVA et suivi des remboursements. À ce stade, il s'agit d'une étude — le développement n'a pas commencé.",
+        "tagline": "Plateforme de contrôle de conformité des factures normalisées électroniques et de constitution du dossier de remboursement de crédit de TVA, pour les entreprises en Côte d'Ivoire. Développement non démarré.",
+        "lead": "Les entreprises structurellement en crédit de TVA — exportateurs agréés, industriels, opérateurs miniers — immobilisent des montants importants de trésorerie. Monter un dossier de remboursement mobilise plusieurs jours de travail manuel, et une seule facture d'achat non conforme dans le lot entraîne un rejet qui prolonge l'immobilisation.",
         "cardTech": [],
         "stack": [],
         "features": [],
-        "roadmap": [],
-        "decisions": [],
+        "roadmap": [
+          "Contrôle de conformité des factures normalisées électroniques",
+          "Référentiel de règles versionné et daté d'effet",
+          "Levée manuelle d'anomalie avec justification tracée",
+          "Journal d'audit du dossier",
+          "Constitution du dossier de remboursement"
+        ],
+        "decisions": [
+          {
+            "title": "Aucun appel à l'API d'émission FNE",
+            "description": "Le produit n'appelle jamais un endpoint d'émission de la plateforme de Facturation Normalisée Électronique : il ne se substitue jamais à la certification fiscale d'une facture."
+          },
+          {
+            "title": "Aucune clé API cliente stockée",
+            "description": "La clé API FNE d'un client n'est jamais conservée par le produit, pour ne jamais devenir un point de compromission du système d'émission de factures."
+          },
+          {
+            "title": "Aucune émission ni certification de facture",
+            "description": "Le produit contrôle la conformité de factures déjà émises et certifiées ; il n'émet et ne certifie aucune facture lui-même."
+          },
+          {
+            "title": "Aucune communication automatique avec l'administration",
+            "description": "Le dossier de remboursement est constitué pour un dépôt par l'entreprise elle-même ; le produit ne communique jamais automatiquement avec l'administration fiscale."
+          }
+        ],
         "state": [
-          "Cahier des charges rédigé après analyse de la documentation technique DGI/FNE",
+          "Cahier des charges en version 1.1, rédigé après analyse de la documentation technique et réglementaire de la DGI",
           "Faisabilité technique validée",
-          "Démarches en cours pour l'accès à l'environnement de test de la DGI",
+          "Restent à faire avant tout prototypage : entretiens terrain auprès de cabinets comptables et de directions financières",
+          "Restent à faire avant tout prototypage : accès à l'environnement de test de la DGI, demandé",
           "Développement non démarré : ni démo, ni code à montrer"
         ],
-        "note": "",
+        "note": "Zéro rejet, zéro aller-retour : le produit ne prétend pas accélérer la décision de l'administration, il garantit que le dossier déposé est irréprochable et documenté.",
         "shotAlts": []
       }
     }

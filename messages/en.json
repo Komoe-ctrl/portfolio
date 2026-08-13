@@ -37,7 +37,7 @@
     "firstName": "Komoe Komoe",
     "lastName": "Emile",
     "intro": "I build modern, secure, and scalable web applications with Next.js, TypeScript, NestJS, and PostgreSQL.",
-    "currentProject": "Currently building: FiscalCI — a SaaS platform for VAT management",
+    "currentProject": "Currently: FiscalCI — invoice compliance & VAT refund checks",
     "ctaProjects": "View my work",
     "ctaCv": "Download CV",
     "ctaCvAria": "Download Komoe Emile's CV as a PDF",
@@ -287,20 +287,44 @@
       "fiscalci": {
         "title": "FiscalCI",
         "status": "Feasibility study",
-        "tagline": "A planned SaaS platform to automate VAT returns and refund tracking for businesses in Côte d'Ivoire. Development hasn't started.",
-        "lead": "A planned SaaS platform for businesses in Côte d'Ivoire: automated VAT returns and refund tracking. At this stage it is a study — development hasn't started.",
+        "tagline": "A compliance-checking platform for electronic standardized invoices and refund-file preparation for VAT tax credits, for businesses in Côte d'Ivoire. Development hasn't started.",
+        "lead": "Businesses that are structurally in VAT credit — approved exporters, industrial operators, mining companies — tie up significant amounts of cash. Building a refund file takes several days of manual work, and a single non-compliant purchase invoice in the batch triggers a rejection that extends the cash tie-up.",
         "cardTech": [],
         "stack": [],
         "features": [],
-        "roadmap": [],
-        "decisions": [],
+        "roadmap": [
+          "Compliance checks for electronic standardized invoices",
+          "Versioned, effective-dated rule set",
+          "Manual anomaly resolution with tracked justification",
+          "Audit log for the file",
+          "Refund file preparation"
+        ],
+        "decisions": [
+          {
+            "title": "Never calls the FNE issuance API",
+            "description": "The product never calls an issuance endpoint of the Electronic Standardized Invoicing platform: it never substitutes itself for a invoice's tax certification."
+          },
+          {
+            "title": "Never stores a client's API key",
+            "description": "A client's FNE API key is never held by the product, so it never becomes a compromise point for the invoice-issuance system."
+          },
+          {
+            "title": "Never issues or certifies an invoice",
+            "description": "The product checks the compliance of invoices that are already issued and certified; it never issues or certifies an invoice itself."
+          },
+          {
+            "title": "Never communicates automatically with the tax authority",
+            "description": "The refund file is prepared for the business itself to file; the product never communicates automatically with the tax authority."
+          }
+        ],
         "state": [
-          "Requirements written after reviewing the DGI/FNE technical documentation",
+          "Requirements at version 1.1, written after reviewing the DGI's technical and regulatory documentation",
           "Technical feasibility validated",
-          "Application under way for access to the DGI test environment",
+          "Still needed before any prototyping: field interviews with accounting firms and finance departments",
+          "Still needed before any prototyping: access to the DGI test environment, requested",
           "Development not started: no demo, no code to show"
         ],
-        "note": "",
+        "note": "Zero rejections, zero back-and-forth: the product doesn't claim to speed up the administration's decision — it guarantees the filed dossier is airtight and fully documented.",
         "shotAlts": []
       }
     }
