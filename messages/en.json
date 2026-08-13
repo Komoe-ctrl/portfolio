@@ -143,7 +143,7 @@
   "Projects": {
     "badge": "Featured work",
     "title": "My projects",
-    "intro": "Three projects at three different stages. Each card opens a detail page: what works today, what is still missing, and the technical calls behind it.",
+    "intro": "Four projects at different stages. Each card opens a detail page: what works today, what is still missing, and the technical calls behind it.",
     "cardCta": "See the details",
     "backToProjects": "Back to projects",
     "allProjects": "All projects",
@@ -325,6 +325,30 @@
           "Development not started: no demo, no code to show"
         ],
         "note": "Zero rejections, zero back-and-forth: the product doesn't claim to speed up the administration's decision — it guarantees the filed dossier is airtight and fully documented.",
+        "shotAlts": []
+      },
+      "alentour": {
+        "title": "Alentour",
+        "status": "In progress",
+        "tagline": "Mobile app to discover, publish and book events around you in Abidjan, sorted by real distance from your location. API complete, mobile client being wired up.",
+        "lead": "Mobile app to discover, publish and book events around you in Abidjan. Attendees browse events sorted by real distance from their location and book a spot; organisers publish, subject to moderation. API complete, mobile client being wired up.",
+        "cardTech": [
+          "React Native",
+          "Expo",
+          "NestJS",
+          "PostgreSQL"
+        ],
+        "stack": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "NestJS",
+          "Prisma",
+          "PostgreSQL"
+        ],
+        "features": [],
+        "roadmap": [],
+        "decisions": [],
         "shotAlts": []
       }
     }
