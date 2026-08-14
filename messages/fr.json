@@ -150,7 +150,9 @@
     "linksLabels": {
       "demo": "Démo",
       "api": "Documentation API",
-      "code": "Code source"
+      "code": "Code source",
+      "codeMobile": "App mobile",
+      "codeApi": "API"
     },
     "noVisual": "Pas encore de capture : le développement n'a pas commencé.",
     "sections": {

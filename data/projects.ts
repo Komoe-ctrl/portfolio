@@ -13,8 +13,8 @@ export type StatusTone = "progress" | "done" | "study";
 export interface ProjectLinks {
   demo?: string;
   api?: string;
-  /** Un ou plusieurs dépôts (ex. application mobile + API séparées). */
-  code?: string | string[];
+  /** Un seul dépôt (libellé générique "Code source") ou plusieurs dépôts nommés. */
+  code?: string | { mobile?: string; api?: string };
 }
 
 export interface ProjectCredential {
@@ -82,10 +82,10 @@ export const PROJECTS: ProjectMeta[] = [
     shots: ["/images/alentour-hero.webp"],
     monogram: "ALT",
     links: {
-      code: [
-        "https://github.com/Komoe-ctrl/Events",
-        "https://github.com/Komoe-ctrl/Events-api",
-      ],
+      code: {
+        mobile: "https://github.com/Komoe-ctrl/Events",
+        api: "https://github.com/Komoe-ctrl/Events-api",
+      },
     },
   },
 ];

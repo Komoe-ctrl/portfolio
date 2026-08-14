@@ -17,24 +17,28 @@ export default function ProjectLinks({
   className = "",
 }: {
   links: Links;
-  labels: { demo: string; api: string; code: string };
+  labels: {
+    demo: string;
+    api: string;
+    code: string;
+    codeMobile: string;
+    codeApi: string;
+  };
   variant: keyof typeof STYLES;
   className?: string;
 }) {
-  const codeLinks = Array.isArray(links.code)
-    ? links.code
-    : links.code
-      ? [links.code]
-      : [];
+  const codeEntries =
+    typeof links.code === "string"
+      ? [{ href: links.code, label: labels.code }]
+      : [
+          { href: links.code?.mobile, label: labels.codeMobile },
+          { href: links.code?.api, label: labels.codeApi },
+        ];
 
   const entries = [
     { href: links.demo, label: labels.demo, Icon: IconExternalLink },
     { href: links.api, label: labels.api, Icon: IconFileText },
-    ...codeLinks.map((href) => ({
-      href,
-      label: labels.code,
-      Icon: IconBrandGithub,
-    })),
+    ...codeEntries.map((entry) => ({ ...entry, Icon: IconBrandGithub })),
   ].filter((entry): entry is { href: string; label: string; Icon: typeof IconBrandGithub } => !!entry.href);
 
   if (entries.length === 0) return null;

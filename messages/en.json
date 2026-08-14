@@ -150,7 +150,9 @@
     "linksLabels": {
       "demo": "Demo",
       "api": "API docs",
-      "code": "Source code"
+      "code": "Source code",
+      "codeMobile": "Mobile app",
+      "codeApi": "API"
     },
     "noVisual": "No screenshot yet — development hasn't started.",
     "sections": {

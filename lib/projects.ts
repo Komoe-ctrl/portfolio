@@ -37,7 +37,13 @@ export interface ProjectLabels {
   backToProjects: string;
   allProjects: string;
   noVisual: string;
-  linksLabels: { demo: string; api: string; code: string };
+  linksLabels: {
+    demo: string;
+    api: string;
+    code: string;
+    codeMobile: string;
+    codeApi: string;
+  };
   sections: {
     features: string;
     roadmap: string;
