@@ -6,7 +6,7 @@ import StatusBadge from "@/components/StatusBadge";
 import type { Project, ProjectLabels } from "@/lib/projects";
 
 const CARD_SIZES =
-  "(min-width: 1024px) 496px, (min-width: 768px) 45vw, calc(100vw - 3rem)";
+  "(min-width: 1024px) 432px, (min-width: 768px) 45vw, calc(100vw - 3rem)";
 
 export default function ProjectCard({
   project,

@@ -36,7 +36,7 @@ export default async function Projects() {
         </p>
       </div>
 
-      <div className="grid max-w-5xl gap-6 md:grid-cols-2 md:gap-8">
+      <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:gap-8">
         {projects.map((project, index) => (
           <SectionReveal
             key={project.meta.slug}
