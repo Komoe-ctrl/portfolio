@@ -349,7 +349,9 @@
         "features": [],
         "roadmap": [],
         "decisions": [],
-        "shotAlts": []
+        "shotAlts": [
+          "Écrans de l'application Alentour : liste des événements triés par distance, fiche d'un événement, code de réservation"
+        ]
       }
     }
   },

@@ -349,7 +349,9 @@
         "features": [],
         "roadmap": [],
         "decisions": [],
-        "shotAlts": []
+        "shotAlts": [
+          "Alentour app screens: events sorted by distance, an event's detail page, a reservation code"
+        ]
       }
     }
   },

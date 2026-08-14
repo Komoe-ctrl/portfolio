@@ -79,7 +79,7 @@ export const PROJECTS: ProjectMeta[] = [
   {
     slug: "alentour",
     statusTone: "progress",
-    shots: [],
+    shots: ["/images/alentour-hero.webp"],
     monogram: "ALT",
     links: {
       code: [
